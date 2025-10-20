@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Simple Tic-Tac-Toe</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="app">
+        <h1>Simple Tic‑Tac‑Toe</h1>
+
+        <div class="controls">
+            <label>Mode
+                <select id="mode">
+                    <option value="HUMAN_HUMAN">Human vs Human</option>
+                    <option value="HUMAN_AI">Human vs AI</option>
+                    <option value="AI_AI">AI vs AI</option>
+                </select>
+            </label>
+
+            <label class="single-alg">AI Algorithm
+                <select id="alg">
+                    <option value="MINIMAX">Minimax</option>
+                    <option value="ALPHABETA">Alpha‑Beta</option>
+                </select>
+            </label>
+
+            <label class="ai-ai-only" style="display:none">P1 Algorithm (X)
+                <select id="p1Alg">
+                    <option value="MINIMAX">Minimax</option>
+                    <option value="ALPHABETA">Alpha‑Beta</option>
+                </select>
+            </label>
+
+            <label class="ai-ai-only" style="display:none">P2 Algorithm (O)
+                <select id="p2Alg">
+                    <option value="MINIMAX">Minimax</option>
+                    <option value="ALPHABETA">Alpha‑Beta</option>
+                </select>
+            </label>
+
+                <label>Player Side
+                    <select id="playerSide">
+                        <option value="X">X (first)</option>
+                        <option value="O">O (second)</option>
+                    </select>
+                </label>
+
+            <label>Speed
+                <input id="speed" type="range" min="50" max="800" value="300">
+                <small class="speed-hint">Left: slower · Right: faster</small>
+            </label>
+
+            <button id="restart">Restart</button>
+            <button id="toggle">Play</button>
+        </div>
+
+        <div class="main">
+            <div id="board" class="board"></div>
+            <div class="sidebar">
+                <div id="status">Status: Ready</div>
+                <div id="metrics">
+                    <div>Decision Time: <span id="time">-</span></div>
+                    <div>Nodes: <span id="nodes">-</span></div>
+                    <div>Pruned: <span id="pruned">-</span></div>
+                </div>
+                <div id="aiIndicator" class="ai-indicator" aria-hidden="true">AI thinking…</div>
+                        <div id="totals" class="totals-panel">
+                            <h4>Totals</h4>
+                            <div>Total Time: <span id="totalTime">-</span></div>
+                            <div>Total Nodes: <span id="totalNodes">-</span></div>
+                            <div>Total Pruned: <span id="totalPruned">-</span></div>
+                        </div>
+                <div id="log" class="log"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
